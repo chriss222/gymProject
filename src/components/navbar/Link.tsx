@@ -8,7 +8,7 @@ interface Props {
     setSelectedPage: (value: SelectedPage) => void;
 }
 
-function Link({ page, selectedPage, setSelectedPage }: Props) {
+const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
     const pageHref = page.toLowerCase().replace(/ /g, "") as SelectedPage;
 
     return (
