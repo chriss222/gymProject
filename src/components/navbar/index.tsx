@@ -5,6 +5,7 @@ import Link from './Link';
 import { SelectedPage } from '@/shared/types';
 import { useMediaQuery } from "../../hooks/useMediaQuery.js";
 import Button from '../../shared/Button';
+import gymLogo from "@/assets/gymLogo.png";
 
 interface Props {
     isTopOfPage: boolean;
@@ -23,7 +24,7 @@ export const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) =>
             <div className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}>
                 <div className={`${flexBetween} mx-auto w-5/6`}>
                     <div className={`${flexBetween} w-full gap-16`}>
-                        <h1>LOGO HERE</h1>
+                        <img className="max-w-[100px]" src={gymLogo} />
                         {isAboveMediumScreens ? 
                         (<div className={`${flexBetween} w-full`}>
                             <div className={`${flexBetween} gap-8 text-sm`}>
@@ -50,7 +51,7 @@ export const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) =>
                             </div>
                             <div className={`${flexBetween} gap-8`}>
                                 <p>Sign In</p>
-                                <Button>Become a Member</Button>
+                                <Button setSelectedPage={setSelectedPage}>Become a Member</Button>
                             </div>
                         </div>)
                         : (
