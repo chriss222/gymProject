@@ -49,7 +49,7 @@ const Home = ({ setSelectedPage }: Props) => {
                 </div>
                 <div className='flex basis-[20%] justify-center md:ml-40 md:mt-16 md:justify-end'>
                     <div>
-                        <img alt="homepage-image" className='' src={hydrate} />
+                        <img alt="homepage-image" className='max-md:hidden' src={hydrate} />
                     </div>
                 </div>
             </div>

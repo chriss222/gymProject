@@ -7,6 +7,8 @@ import { useMediaQuery } from "../../hooks/useMediaQuery.js";
 import Button from '../../shared/Button';
 import gymLogo from "@/assets/gymLogo.png";
 
+const navLinks: Array<string> = ["Home", "Benefits", "Classes", "Contact Us"]
+
 interface Props {
     isTopOfPage: boolean;
     selectedPage: SelectedPage;
@@ -28,26 +30,14 @@ export const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) =>
                         {isAboveMediumScreens ? 
                         (<div className={`${flexBetween} w-full`}>
                             <div className={`${flexBetween} gap-8 text-sm`}>
-                                <Link 
-                                    page="Home" 
-                                    selectedPage={selectedPage} 
-                                    setSelectedPage={setSelectedPage} 
-                                />
-                                <Link 
-                                    page="Benefits" 
-                                    selectedPage={selectedPage} 
-                                    setSelectedPage={setSelectedPage} 
-                                />
-                                <Link 
-                                    page="Classes" 
-                                    selectedPage={selectedPage} 
-                                    setSelectedPage={setSelectedPage} 
-                                />
-                                <Link 
-                                    page="Contact Us" 
-                                    selectedPage={selectedPage} 
-                                    setSelectedPage={setSelectedPage} 
-                                />
+                                {navLinks.map((page: string, i: number) => (
+                                    <Link 
+                                        key={i}
+                                        page={page}
+                                        selectedPage={selectedPage}
+                                        setSelectedPage={setSelectedPage}
+                                    />
+                                ))}
                             </div>
                             <div className={`${flexBetween} gap-8`}>
                                 <p>Sign In</p>
@@ -75,26 +65,14 @@ export const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) =>
                         </button>
                     </div>
                     <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-                        <Link 
-                            page="Home" 
-                            selectedPage={selectedPage} 
-                            setSelectedPage={setSelectedPage} 
-                        />
-                        <Link 
-                            page="Benefits" 
-                            selectedPage={selectedPage} 
-                            setSelectedPage={setSelectedPage} 
-                        />
-                        <Link 
-                            page="Classes" 
-                            selectedPage={selectedPage} 
-                            setSelectedPage={setSelectedPage} 
-                        />
-                        <Link 
-                            page="Contact Us" 
-                            selectedPage={selectedPage} 
-                            setSelectedPage={setSelectedPage} 
-                        />
+                        {navLinks.map((page: string, i: number) => (
+                            <Link 
+                                key={i}
+                                page={page}
+                                selectedPage={selectedPage}
+                                setSelectedPage={setSelectedPage}
+                            />
+                        ))}
                     </div>
                 </div>
             )}
